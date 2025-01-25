@@ -137,13 +137,15 @@ const Contact = () => {
 
         {/* Google Maps Embed (Optional) */}
         <div className="mt-8">
-          <iframe
-            className="w-full h-64 rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093665!2d144.95373521531708!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5dfc5b5b3f%3A0x3d2f0f7db9b9b2b!2sMelbourne%20CBD%2C%20Victoria%2C%20Australia!5e0!3m2!1sen!2sbd!4v1619045811058!5m2!1sen!2sbd"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
+  <iframe
+    title="Google Maps location in Melbourne"
+    className="w-full h-64 rounded-lg"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093665!2d144.95373521531708!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5dfc5b5b3f%3A0x3d2f0f7db9b9b2b!2sMelbourne%20CBD%2C%20Victoria%2C%20Australia!5e0!3m2!1sen!2sbd!4v1619045811058!5m2!1sen!2sbd"
+    allowFullScreen=""
+    loading="lazy"
+  ></iframe>
+</div>
+
 
         {/* Footer */}
         <footer className="bg-blue-800 py-10 text-white text-center mt-16">

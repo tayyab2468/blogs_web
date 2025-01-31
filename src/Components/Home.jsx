@@ -1,5 +1,5 @@
 import React from 'react';
-
+import image3 from '../weather-effects-collage-concept_23-2150062067.jpg';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";

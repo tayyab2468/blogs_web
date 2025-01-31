@@ -147,19 +147,41 @@ const Contact = () => {
 </div>
 
 
-        {/* Footer */}
-        <footer className="bg-blue-800 py-10 text-white text-center mt-16">
-          <h1 className="text-white text-xl font-bold">INTERN</h1>
-         
+<footer className="w-full bg-black text-white py-6 mt-16">
+  <div className="container mx-auto flex flex-col items-center text-center px-4">
+    
+    {/* Footer Links & Copyright */}
+    <div className="w-full flex flex-col sm:flex-row sm:justify-between max-w-4xl">
+      <p className="text-sm sm:text-base font-semibold">
+        © 2025 Wanderlust Adventures. All Rights Reserved.
+      </p>
+      <div className="flex flex-wrap justify-center sm:justify-end gap-3 mt-3 sm:mt-0">
+        <a href="/terms" className="hover:underline text-xs sm:text-sm">Terms & Conditions</a>
+        <a href="/privacy" className="hover:underline text-xs sm:text-sm">Privacy Policy</a>
+        <a href="/faqs" className="hover:underline text-xs sm:text-sm">FAQs</a>
+      </div>
+    </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center gap-4 mt-6">
-            <InstagramIcon fontSize="large" />
-            <FacebookIcon fontSize="large" />
-            <LinkedInIcon fontSize="large" />
-            <YouTubeIcon fontSize="large" />
-          </div>
-        </footer>
+    {/* Social Media Icons */}
+    <div className="flex justify-center gap-6 mt-4">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <InstagramIcon fontSize="medium" className="hover:text-gray-400 transition" />
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <FacebookIcon fontSize="medium" className="hover:text-gray-400 transition" />
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <LinkedInIcon fontSize="medium" className="hover:text-gray-400 transition" />
+      </a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <YouTubeIcon fontSize="medium" className="hover:text-gray-400 transition" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
       </div>
     </div>
   );

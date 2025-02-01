@@ -4,6 +4,8 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from 'react-router-dom';
+const categories = ['All', 'Honeymoon', 'Family', 'Adventure'];
+
 const packages = [
   { 
     name: 'Maldives Honeymoon', 
@@ -109,9 +111,22 @@ const Package = () => {
     <div className="container mx-auto p-6">
       <h1 className="text-center text-4xl font-bold font-Poppins tracking-tight">Explore Our Packages</h1>
 
-      {/* Category Buttons */}
-      <div className="flex justify-center space-x-4 mt-6">
-        {['All', 'Honeymoon', 'Family', 'Adventure'].map(category => (
+      {/* Category Selection for Mobile */}
+      <div className="mt-6 flex flex-col items-center sm:hidden">
+        <select 
+          className="px-4 py-2 border rounded-lg bg-black text-white" 
+          value={selectedCategory} 
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          {categories.map(category => (
+            <option key={category} value={category}>{category}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Category Buttons for Larger Screens */}
+      <div className="hidden sm:flex justify-center space-x-4 mt-6">
+        {categories.map(category => (
           <button 
             key={category} 
             className={`px-4 py-2 rounded-lg ${selectedCategory === category ? 'bg-blue-600 text-white' : 'bg-gray-300 text-black'}`} 

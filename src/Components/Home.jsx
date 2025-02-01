@@ -1,5 +1,5 @@
 import React from 'react';
-import image3 from '../weather-effects-collage-concept_23-2150062067.jpg';
+import image3 from '../jithin-vijayamohanan-yE91FizJkr8-unsplash.jpg';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -32,25 +32,25 @@ const Home = () => {
         
       
 
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-8 md:px-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-            Explore the World with Wanderlust Adventures
-          </h1>
-          
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-5 mb-10 font-bold max-w-3xl">
-            Discover breathtaking destinations around the globe. Whether you seek serene beaches, 
-            majestic mountains, or vibrant cities, we’ve got you covered.
-          </p>
-          <Link to="/destination">
-          <button className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-500 text-white rounded-full text-lg sm:text-xl hover:bg-blue-600 transition">
-            Explore Destinations
-          </button>
-           </Link>
-        </div>
-      </div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-10 md:px-16 lg:px-24">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white shadow-lg leading-snug md:leading-tight drop-shadow-xl">
+    Explore the World with <span class="text-yellow-400">Wanderlust Adventures</span>
+  </h1>
 
-      {/* Featured Destinations Section */}
+  <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-medium shadow-md leading-relaxed mt-4 px-6 py-3 
+    bg-gradient-to-r from-black via-gray-900 to-black md:bg-transparent md:text-gray-100 
+    rounded-lg transition-all duration-300">
+    Discover breathtaking destinations around the globe. Whether you seek serene beaches, majestic mountains, or vibrant cities, 
+    <span class="font-semibold text-yellow-300">we’ve got you covered.</span>
+  </p>
+  <Link to="/package">
+  <button className="mt-6 px-6 py-3 text-lg sm:text-xl font-semibold text-white bg-blue-500 hover:bg-blue-600 transition-all duration-300 rounded-full shadow-md">
+    Explore Destinations
+  </button>
+</Link> 
+</div>
+</div>
+      
       <section className="py-20 bg-white">
         <div className="container mx-auto text-center">
           <h1 className="text-gray-900 font-semibold text-4xl lg:text-5xl">
@@ -62,7 +62,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Responsive Grid for Destinations */}
+       
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 px-4">
           {destinations.map((destination, index) => (
             <div
@@ -86,8 +86,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* Footer Section */}
       <footer className="w-full bg-black text-white py-12">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4">
           <p className="text-center sm:text-left font-bold text-lg">
@@ -99,8 +97,6 @@ const Home = () => {
             <a href="/faqs" className="hover:underline">FAQs</a>
           </div>
         </div>
-
-        {/* Social Media Icons */}
         <div className="flex justify-center gap-6 mt-6">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <InstagramIcon fontSize="large" className="hover:text-gray-400 transition" />

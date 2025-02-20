@@ -1,64 +1,109 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import SearchIcon from "@mui/icons-material/Search";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/${query.toLowerCase()}`); // Fixed template string syntax
+      setQuery(""); // Clear input after search
+    }
+  };
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-5 flex justify-between items-center py-4">
-        {/* Logo */}
-        <span className="text-3xl font-bold text-black cursor-pointer">
-          Adventures
-        </span>
+    <nav className="bg-black text-white flex items-center justify-between h-28 w-full px-4 md:px-8 lg:px-16 relative">
+      {/* Logo */}
+      <h1 className="text-white font-Poppins text-xl font-bold">News App</h1>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 font-semibold">
-          <li><Link to="/" className="hover:text-cyan-500 text-black">HOME</Link></li>
-          <li><Link to="/destination" className="hover:text-cyan-500 text-black">DESTINATION</Link></li>
-          <li><Link to="/package" className="hover:text-cyan-500 text-black">PACKAGES</Link></li>
-          <li><Link to="/contact" className="hover:text-cyan-500 text-black">CONTACT US</Link></li>
-        </ul>
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex font-Poppins text-xl gap-8">
+        {["home", "business", "health", "technology", "sports", "world"].map(
+          (item) => (
+            <li key={item}>
+              <Link
+                to={`/${item}`}
+                className="py-2 hover:text-blue-300 cursor-pointer"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </Link>
+            </li>
+          )
+        )}
+      </ul>
 
-        {/* Book Now Button (Desktop) */}
-        <div className="hidden md:block">
-          <Link to="/booknow">
-            <button className="bg-cyan-400 text-black px-6 py-2 rounded hover:bg-red-500 transition">
-              Book Now
-            </button>
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button className="text-3xl md:hidden text-black" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+      {/* Search Bar (Hidden on Mobile) */}
+      <form
+        onSubmit={handleSearch}
+        className="hidden md:flex relative items-center"
+      >
+        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input
+          type="text"
+          placeholder="Search bar"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-40 md:w-64 h-10 text-black font-Poppins rounded-lg focus:outline-none px-4 py-2 pl-10"
+          aria-label="Search"
+        />
+        <button
+          type="submit"
+          className="ml-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md text-white"
+          aria-label="Submit Search"
+        >
+          Search
         </button>
+      </form>
+
+      {/* Buttons (Hidden on Mobile) */}
+      <div className="hidden md:flex items-center gap-4">
+      <Link to="/login" className="bg-blue-500 hover:bg-red-500 px-4 py-2 rounded-md">
+          Login
+        </Link>
+        <Link to="/signup" className="bg-blue-500 hover:bg-red-500 px-4 py-2 rounded-md w-full">Signup  </Link>
       </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden z-50"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle Menu"
+      >
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
+      </button>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center text-xl font-bold text-white z-50">
-          <button
-            className="absolute top-5 right-5 text-white text-3xl"
-            onClick={() => setIsOpen(false)}
-          >
-            <AiOutlineClose />
-          </button>
-
-          <ul className="space-y-6 text-center">
-            <li><Link to="/" onClick={() => setIsOpen(false)}>HOME</Link></li>
-            <li><Link to="/destination" onClick={() => setIsOpen(false)}>DESTINATION</Link></li>
-            <li><Link to="/package" onClick={() => setIsOpen(false)}>PACKAGES</Link></li>
-            <li><Link to="/contact" onClick={() => setIsOpen(false)}>CONTACT US</Link></li>
+        <div className="fixed inset-0 top-24 left-0 w-full bg-black flex flex-col items-center gap-4 py-4 z-50">
+          <ul className="flex flex-col text-2xl  font-Poppins gap-8 mt-10">
+            {["home", "business", "health", "technology", "sports", "world"].map(
+              (item) => (
+                <li key={item}>
+                  <Link
+                    to={`/${item}`}
+                    className="py-2 hover:text-blue-300 cursor-pointer"
+                    onClick={() => setIsOpen(false)} // Close menu on click
+                  >
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
-
-          {/* Mobile Book Now Button */}
-          <Link to="/booknow" className="mt-8">
-            <button className="bg-cyan-400 text-white px-6 py-2 rounded hover:bg-red-500 transition">
-              Book Now
-            </button>
-          </Link>
+          <div className="flex flex-col justify-center text-center gap-4 mt-4">
+            <Link to="/login" className="bg-blue-500 hover:bg-red-500 px-12 py-2 rounded-md w-full">
+              Login
+           </Link>
+           <Link to="/signup" className="bg-blue-500 hover:bg-red-500 px-4 py-2 rounded-md w-full">
+              Signup
+              </Link>
+          </div>
         </div>
       )}
     </nav>

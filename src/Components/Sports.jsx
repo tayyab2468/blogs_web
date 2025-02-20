@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 const Sports = () => {
-  const { category } = useParams();
+  
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
 

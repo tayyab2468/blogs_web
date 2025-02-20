@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import image1 from '../pak-vs-nz-2.png'; // Placeholder image
 
 const Health = () => {
   const [article, setArticles] = useState([]);

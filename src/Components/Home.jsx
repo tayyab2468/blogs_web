@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import image1 from '../Components/jithin-vijayamohanan-yE91FizJkr8-unsplash.jpg';
 
 
 const Home = () => {
@@ -49,7 +50,7 @@ const Home = () => {
       {/* Breaking News Section */}
       <div 
   className="relative w-full h-[450px] flex items-center justify-center text-white bg-cover bg-center rounded-lg shadow-lg"
-  style={{ backgroundImage: `url( })` }}
+  style={{ backgroundImage: `url(${image || image1})` }}
 >
   {/* Dark Overlay for Better Readability */}
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 rounded-lg"></div>

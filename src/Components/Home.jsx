@@ -5,7 +5,7 @@ import image1 from '../Components/jithin-vijayamohanan-yE91FizJkr8-unsplash.jpg'
 const Home = () => {
   const [title, setTitle] = useState(null);
   const [description, setDescription] = useState(null);
-  const [content,setContent] - useState(null);
+  const [content, setContent] = useState(null);
   const [url, setUrl] = useState(null);
   const [image, setImage] = useState(null);
   const [publishedAt,setpublishedAt] = useState(null);

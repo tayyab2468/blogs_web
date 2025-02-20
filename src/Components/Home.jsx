@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import image1 from '../pak-vs-nz-2.png'; // This seems to be a placeholder image for local use
+
 
 const Home = () => {
   const [title, setTitle] = useState(null);

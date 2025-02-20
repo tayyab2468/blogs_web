@@ -8,7 +8,7 @@ const Home = () => {
   const [content, setContent] = useState(null);
   const [url, setUrl] = useState(null);
   const [image, setImage] = useState(null);
-  const [publishedAt,setpublishedAt] = useState(null);
+   const [publishedAt, setPublishedAt] = useState(null);
  
   const [loading, setLoading] = useState(true);
   const [trendingNews, setTrendingNews] = useState([]); // ✅ Added trendingNews state

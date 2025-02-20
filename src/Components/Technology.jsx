@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import image1 from '../pak-vs-nz-2.png';
+
 const Technology = () => {
   const [article,setarticle] = useState([]);
     const [loading,setLoading] = useState(true);

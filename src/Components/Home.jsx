@@ -49,7 +49,7 @@ const Home = () => {
       {/* Breaking News Section */}
       <div 
   className="relative w-full h-[450px] flex items-center justify-center text-white bg-cover bg-center rounded-lg shadow-lg"
-  style={{ backgroundImage: `url(${image || })` }}
+  style={{ backgroundImage: `url( })` }}
 >
   {/* Dark Overlay for Better Readability */}
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 rounded-lg"></div>

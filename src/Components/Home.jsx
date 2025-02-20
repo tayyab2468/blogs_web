@@ -62,12 +62,7 @@ const Home = () => {
             {title || "Latest Headline Here"}
           </h2>
 
-          {description && (
-            <p className="text-sm sm:text-lg mt-4 p-3 sm:p-4 bg-black/70 text-gray-300 rounded-lg shadow-md">
-              {description}
-            </p>
-          )}
-
+         
           {content && (
             <p className="text-xs sm:text-md mt-2 p-2 sm:p-3 bg-black/50 text-gray-300 rounded-md">
               {content.slice(0, 100)}...
@@ -75,7 +70,7 @@ const Home = () => {
           )}
 
           {publishedAt && (
-            <p className="text-xs sm:text-sm mt-2 text-gray-400">
+            <p className="text-xs sm:text-sm mt-2 text-white">
               Published on: {new Date(publishedAt).toLocaleDateString()}
             </p>
           )}

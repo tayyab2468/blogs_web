@@ -45,37 +45,37 @@ const Home = () => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-6">
+    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6">
       {/* Breaking News Section */}
       <div
-        className="relative w-full h-[450px] flex items-center justify-center text-white bg-cover bg-center rounded-lg shadow-lg"
+        className="relative w-full h-[450px] sm:h-[500px] flex items-center justify-center text-white bg-cover bg-center rounded-lg shadow-lg"
         style={{ backgroundImage: `url(${image || image1})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 rounded-lg"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 rounded-lg"></div>
 
-        <div className="relative z-10 text-center max-w-2xl p-6">
-          <h1 className="text-5xl font-extrabold uppercase text-blue-400 drop-shadow-lg mb-4 tracking-wide">
+        <div className="relative z-10 text-center max-w-2xl px-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold uppercase text-blue-400 drop-shadow-lg mb-4 tracking-wide">
             Breaking News
           </h1>
 
-          <h2 className="text-3xl font-bold text-white drop-shadow-md">
+          <h2 className="text-xl sm:text-3xl font-bold text-white drop-shadow-md leading-snug">
             {title || "Latest Headline Here"}
           </h2>
 
           {description && (
-            <p className="text-lg mt-4 p-4 bg-black/70 text-gray-300 rounded-lg shadow-md">
+            <p className="text-sm sm:text-lg mt-4 p-3 sm:p-4 bg-black/70 text-gray-300 rounded-lg shadow-md">
               {description}
             </p>
           )}
 
           {content && (
-            <p className="text-md mt-2 p-3 bg-black/50 text-gray-300 rounded-md">
+            <p className="text-xs sm:text-md mt-2 p-2 sm:p-3 bg-black/50 text-gray-300 rounded-md">
               {content.slice(0, 100)}...
             </p>
           )}
 
           {publishedAt && (
-            <p className="text-sm mt-2 text-gray-400">
+            <p className="text-xs sm:text-sm mt-2 text-gray-400">
               Published on: {new Date(publishedAt).toLocaleDateString()}
             </p>
           )}
@@ -84,7 +84,7 @@ const Home = () => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg transform hover:scale-105"
+            className="inline-block mt-4 sm:mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg transition shadow-lg transform hover:scale-105"
           >
             Read More →
           </a>
@@ -92,14 +92,20 @@ const Home = () => {
       </div>
 
       {/* Trending News Section */}
-      <h2 className="text-3xl font-bold mt-10 mb-6 text-center">Trending News</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mt-8 sm:mt-10 mb-4 sm:mb-6 text-center">
+        Trending News
+      </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {trendingNews.map((article, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
+          >
             <img
               src={article.image}
               alt="news"
-              className="w-full h-32 object-cover"
+              className="w-full h-40 sm:h-32 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg text-black font-semibold mb-2">
@@ -114,12 +120,12 @@ const Home = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-14 rounded-lg transition inline-block text-center mt-2 mx-auto"
+                className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition"
               >
                 Read More
               </a>
               {article.publishedAt && (
-                <div className="mt-3 text-gray-700 font-medium">
+                <div className="mt-3 text-gray-700 font-medium text-sm">
                   <h4>Published At:</h4>
                   <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                 </div>
